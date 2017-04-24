@@ -2,7 +2,8 @@ import fileinput
 import glob
 import sys
 import string
-
+num={'1','2','3','4','5','6','7','8','9','0'}
+sym{'`','~','!','@','#','$','%','^','&','*','(',')','-','_','+','=','{','}','[',']',':',';','"'}
 for line in fileinput.input(glob.glob('*.txt'), inplace=True):  
   line=line.lower()
   
@@ -16,32 +17,12 @@ for line in fileinput.input(glob.glob('*.txt'), inplace=True):
   line.replace('8', '')
   line.replace('9', '')
   line.replace('0', '')
-  line.replace('`', '')
-  line.replace('~', '')
-  line.replace('!', '')
-  line.replace('@', '')
-  line.replace('#', '')
-  line.replace('$', '')
-  line.replace('%', '')
-  line.replace('^', '')
-  line.replace('&', '')
-  line.replace('*', '')
-  line.replace('(', '')
-  line.replace(')', '')
-  line.replace('-', '')
-  line.replace('_', '')
-  line.replace('+', '')
-  line.replace('=', '')
-  line.replace('{', '')
-  line.replace('}', '')
-  line.replace('[', '')
-  line.replace(']', '')
-  line.replace(':', '')
-  line.replace(';', '')
-  line.replace('"', '')
+ 
   for char in string.punctuation:
     line=line.replace(char,' ')
-  for char in string.number:
+  for char in num:
+    line=line.replace(char,'')
+  for char in sym:
     line=line.replace(char,'')
   sys.stdout.write(line)
     
