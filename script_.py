@@ -23,6 +23,6 @@ for line in fileinput.input(glob.glob('*.txt'), inplace=True):
   for char in num:
     line=line.replace(char,'')
   for char in sym:
-    line=line.replace(char,'')
+    line=line.replace(char,'_')
   sys.stdout.write(line)
     
