@@ -4,6 +4,7 @@ import sys
 
 for line in fileinput.input(glob.glob('*.txt'), inplace=True):  
   line=line.lower()
+  
   line.replace('1', '')
   line.replace('2', '')
   line.replace('3', '')
