@@ -1,6 +1,7 @@
 import fileinput
 import glob
 import sys
+import string
 
 for line in fileinput.input(glob.glob('*.txt'), inplace=True):  
   line=line.lower()
@@ -38,5 +39,9 @@ for line in fileinput.input(glob.glob('*.txt'), inplace=True):
   line.replace(':', '')
   line.replace(';', '')
   line.replace('"', '')
+  for char in string.punctuation:
+    line=line.replace(char,' ')
+  for char in string.number:
+    line=line.replace(char,'')
   sys.stdout.write(line)
     
