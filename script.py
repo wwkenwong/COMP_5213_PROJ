@@ -2,7 +2,7 @@ import fileinput
 import glob
 import sys
 
-for line in fileinput.input(glob.glob('*.mod'), inplace=True):
+for line in fileinput.input(glob.glob('*.txt'), inplace=True):
     sys.stdout.write(line.replace('A', 'a'))
     sys.stdout.write(line.replace('B', 'b'))
     sys.stdout.write(line.replace('C', 'c'))
