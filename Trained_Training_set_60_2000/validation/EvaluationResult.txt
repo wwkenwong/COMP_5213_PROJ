@@ -1,0 +1,1 @@
+Per-document log-likelihood =  -521.7107428296773
